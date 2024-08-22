@@ -27,11 +27,10 @@ jobs:
           source: ${{ inputs.source_directories }}
           extensions: "hpp,cpp"
           clangFormatVersion: 12
-          inplace: true
+          inplace: false
       - uses: tj-actions/changed-files@v45
         with:
           since_last_remote_commit: true
-          fail_on_initial_diff_error: true
         id: get_changed_files
       - name: List all changed files
         env:
