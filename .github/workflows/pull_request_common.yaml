@@ -28,15 +28,3 @@ jobs:
           extensions: "hpp,cpp"
           clangFormatVersion: 12
           inplace: false
-      - uses: tj-actions/changed-files@v45
-        with:
-          since_last_remote_commit: true
-        id: get_changed_files
-      - name: List all changed files
-        env:
-          ALL_CHANGED_FILES: ${{ steps.get_changed_files.outputs.all_changed_files }}
-        run: |
-          for file in ${ALL_CHANGED_FILES}; do
-            echo "$file was changed"
-          done
-        shell: bash
