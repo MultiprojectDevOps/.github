@@ -1,0 +1,16 @@
+name: Multi-Project DevOps Common Pull Request
+
+on:
+  workflow_call:
+    inputs:
+      source_directories:
+        description: "Space separated list of source directories"
+        required: true
+
+jobs:
+
+  check_license:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: apache/skywalking-eyes@v0.4.0
