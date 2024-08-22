@@ -5,6 +5,7 @@ on:
     inputs:
       source_directories:
         description: "Space separated list of source directories"
+        type: string
         required: true
 
 jobs:
